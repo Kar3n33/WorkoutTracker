@@ -50,7 +50,8 @@ app.get("/api/workouts/range", (req, res) => {
     ]).sort({ _id: -1 }).limit(7).then(dbWorkout => {
         res.json(dbWorkout);
     }).catch(err => {
-        );
+        res.json(err);
+    });
     });
     // creates new workout from user input
     app.post("/api/workouts", (req, res) => {
