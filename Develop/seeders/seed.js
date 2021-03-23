@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/blooming-reaches-79850", {
+mongoose.connect("mongodb://localhost/powerful-retreat-39538", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
