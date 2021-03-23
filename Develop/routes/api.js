@@ -63,8 +63,4 @@ app.get("/api/workouts/range", (req, res) => {
         });
     });
 
-
-
-
-
 }
