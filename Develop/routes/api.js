@@ -1,7 +1,7 @@
-const db = require("../models");
+const Work = require("../models/workout.js");
 module.exports = (app) => {
 app.get("/api/workouts", (req, res) => {
- db.Workout.aggregate([
+ Work.aggregate([
     {
      $addFields: {
         totalDuration: { $sum: "$exercises.duration" }
@@ -16,8 +16,8 @@ app.get("/api/workouts", (req, res) => {
 
     });
 
-app.get("/api/workouts", (req, res) => {
- db.Workout.aggregate([
+app.get("/api/workouts/range", (req, res) => {
+ Work.aggregate([
     {
      $addFields: {
        workoutTotal: {
@@ -29,7 +29,7 @@ app.get("/api/workouts", (req, res) => {
     });
     
 app.put("/api/workouts/:id", (req, res) => {
- db.Workout.findByIdAndUpdate(
+ Work.findByIdAndUpdate(
   req.params.id,
     { $push: { exercises: req.body } }
 
@@ -41,7 +41,7 @@ app.put("/api/workouts/:id", (req, res) => {
     });
 
 app.get("/api/workouts/range", (req, res) => {
-  db.Workout.aggregate([
+  Work.aggregate([
     {
     $addFields: {
       totalDuration: { $sum: "$exercises.duration" }
