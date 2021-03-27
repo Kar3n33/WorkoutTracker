@@ -11,7 +11,7 @@ With this application the user will be able to view, create, and track daily wor
 * AJAX
 
 ## Video Demonstration
-![](assets\FitnessTrackerDemo.gif)
+![](FitnessTrackerDemo.gif)
 
 ## URLs
 Heroku: https://powerful-retreat-39538.herokuapp.com/
